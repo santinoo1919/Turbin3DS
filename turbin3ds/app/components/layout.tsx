@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ColorPresetPicker } from "@/components/color-preset-picker";
 
 export default function ComponentsLayout({
   children,
@@ -29,7 +30,10 @@ export default function ComponentsLayout({
             ← Back to Home
           </Button>
         </Link>
-        <ThemeToggle />
+        <div className="flex items-center gap-4">
+          <ColorPresetPicker />
+          <ThemeToggle />
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
