@@ -2,11 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
     <div className="p-8 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Turbin3DS UI Components</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Turbin3DS UI Components</h1>
+        <ThemeToggle />
+      </div>
       <p className="text-muted-foreground mb-8">
         Browse through the different categories of UI components available in
         this design system.

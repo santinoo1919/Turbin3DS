@@ -62,9 +62,6 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
-      lucide-react:
-        specifier: ^0.487.0
-        version: 0.487.0(react@19.1.0)
       next:
         specifier: 15.2.4
         version: 15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -108,6 +105,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
+      lucide-react:
+        specifier: ^0.487.0
+        version: 0.487.0(react@19.1.0)
       postcss:
         specifier: ^8.5.3
         version: 8.5.3

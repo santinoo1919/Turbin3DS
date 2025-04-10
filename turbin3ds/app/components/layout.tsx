@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function ComponentsLayout({
   children,
@@ -22,12 +23,13 @@ export default function ComponentsLayout({
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
-      <div className="mb-8">
+      <div className="mb-8 flex justify-between items-center">
         <Link href="/">
           <Button variant="outline" size="sm">
             ← Back to Home
           </Button>
         </Link>
+        <ThemeToggle />
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
