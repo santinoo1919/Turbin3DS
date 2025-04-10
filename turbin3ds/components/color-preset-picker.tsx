@@ -13,7 +13,7 @@ const presets = [
   {
     id: "default",
     name: "Default",
-    // We'll update this dynamically based on the theme + i am going to end myself if this stops working again
+    // Dynamic based on theme
     color: "",
   },
   {
@@ -38,7 +38,11 @@ const presets = [
   },
 ];
 
-export function ColorPresetPicker() {
+interface ColorPresetPickerProps {
+  compact?: boolean;
+}
+
+export function ColorPresetPicker({ compact = false }: ColorPresetPickerProps) {
   const { preset, setPreset } = useColorPreset();
   const { theme } = useTheme();
 
@@ -49,7 +53,9 @@ export function ColorPresetPicker() {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm font-medium mr-2">Color Presets:</span>
+      {!compact && (
+        <span className="text-sm font-medium mr-2">Color Presets:</span>
+      )}
       <div className="flex gap-1">
         {presets.map((p) => (
           <Tooltip key={p.id}>
@@ -57,7 +63,7 @@ export function ColorPresetPicker() {
               <Button
                 variant="outline"
                 size="icon"
-                className={`h-8 w-8 rounded-full ${
+                className={`${compact ? "h-7 w-7" : "h-8 w-8"} rounded-full ${
                   preset === p.id ? "ring-2 ring-primary ring-offset-2" : ""
                 }`}
                 onClick={() => setPreset(p.id as any)}
