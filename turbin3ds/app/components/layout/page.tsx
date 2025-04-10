@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/primitives/separator";
 import { cn } from "@/lib/utils";
 
 export default function LayoutComponentsPage() {
