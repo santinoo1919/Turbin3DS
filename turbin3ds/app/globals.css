@@ -76,6 +76,12 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  font-size: 80%;
 }
 
 .dark {
@@ -110,6 +116,92 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4),
+    0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* Default preset uses the existing color scheme */
+.preset-default {
+  /* Uses the existing variables from :root or .dark */
+}
+
+/* Nature preset */
+:root.preset-nature {
+  --primary: #eaefbd;
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: #c9e3ac;
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --accent: #c9e3ac;
+  --accent-foreground: oklch(0.208 0.042 265.755);
+}
+
+.dark.preset-nature {
+  --primary: #eaefbd;
+  --primary-foreground: oklch(0.129 0.042 264.695);
+  --secondary: #c9e3ac;
+  --secondary-foreground: oklch(0.129 0.042 264.695);
+  --accent: #c9e3ac;
+  --accent-foreground: oklch(0.129 0.042 264.695);
+}
+
+/* Forest preset */
+:root.preset-forest {
+  --primary: #90be6d;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: #76b041;
+  --secondary-foreground: oklch(1 0 0);
+  --accent: #76b041;
+  --accent-foreground: oklch(1 0 0);
+}
+
+.dark.preset-forest {
+  --primary: #90be6d;
+  --primary-foreground: oklch(0.129 0.042 264.695);
+  --secondary: #76b041;
+  --secondary-foreground: oklch(0.129 0.042 264.695);
+  --accent: #76b041;
+  --accent-foreground: oklch(0.129 0.042 264.695);
+}
+
+/* Sunset preset */
+:root.preset-sunset {
+  --primary: #ea9010;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: #f4b942;
+  --secondary-foreground: oklch(0.129 0.042 264.695);
+  --accent: #f4b942;
+  --accent-foreground: oklch(0.129 0.042 264.695);
+}
+
+.dark.preset-sunset {
+  --primary: #ea9010;
+  --primary-foreground: oklch(0.129 0.042 264.695);
+  --secondary: #f4b942;
+  --secondary-foreground: oklch(0.129 0.042 264.695);
+  --accent: #f4b942;
+  --accent-foreground: oklch(0.129 0.042 264.695);
+}
+
+/* Midnight preset */
+:root.preset-midnight {
+  --primary: #37371f;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: #595942;
+  --secondary-foreground: oklch(1 0 0);
+  --accent: #595942;
+  --accent-foreground: oklch(1 0 0);
+}
+
+.dark.preset-midnight {
+  --primary: #37371f;
+  --primary-foreground: oklch(0.929 0.013 255.508);
+  --secondary: #595942;
+  --secondary-foreground: oklch(0.929 0.013 255.508);
+  --accent: #595942;
+  --accent-foreground: oklch(0.929 0.013 255.508);
 }
 
 @layer base {
@@ -119,4 +211,52 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.dark .card,
+.dark .input,
+.dark .select,
+.dark .textarea {
+  border-color: var(--border);
+  border-width: 1px;
+}
+
+@keyframes float-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.float-in {
+  animation: float-in 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out forwards;
 }
