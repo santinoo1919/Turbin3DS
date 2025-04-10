@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ColorPresetProvider } from "@/components/color-preset-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { FloatingNavbar } from "@/components/floating-navbar";
+import { FloatingHeader } from "@/components/floating-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,8 +57,8 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="system" storageKey="turbin3ds-theme">
           <ColorPresetProvider>
             <TooltipProvider>
+              <FloatingHeader />
               {children}
-              <FloatingNavbar />
             </TooltipProvider>
           </ColorPresetProvider>
         </ThemeProvider>
