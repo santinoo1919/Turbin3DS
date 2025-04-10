@@ -13,7 +13,7 @@ const presets = [
   {
     id: "default",
     name: "Default",
-    // We'll update this dynamically based on the theme
+    // We'll update this dynamically based on the theme + i am going to end myself if this stops working again
     color: "",
   },
   {
