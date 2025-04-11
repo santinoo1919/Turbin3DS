@@ -2,6 +2,7 @@
 
 import { BaseCard } from "@/components/patterns/BaseCard";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface OrganizationCardProps {
   name: string;
@@ -11,6 +12,7 @@ interface OrganizationCardProps {
   logoUrl?: string;
   onEdit?: () => void;
   onView?: () => void;
+  className?: string;
 }
 
 export function OrganizationCard(props: OrganizationCardProps) {
@@ -35,7 +37,10 @@ export function OrganizationCard(props: OrganizationCardProps) {
       subtitle={props.industry}
       status={props.status}
       imageUrl={props.logoUrl}
-      className="bg-purple-50/50 border-purple-100"
+      className={cn(
+        "bg-purple-50/50 border-purple-100 dark:bg-purple-950/20 dark:border-purple-900/30",
+        props.className
+      )}
       actions={actions}
     >
       {props.employeeCount && (

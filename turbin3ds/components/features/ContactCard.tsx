@@ -2,6 +2,7 @@
 
 import { BaseCard } from "@/components/patterns/BaseCard";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ContactCardProps {
   name: string;
@@ -11,6 +12,7 @@ interface ContactCardProps {
   avatarUrl?: string;
   onEdit?: () => void;
   onContact?: () => void;
+  className?: string;
 }
 
 export function ContactCard(props: ContactCardProps) {
@@ -35,7 +37,10 @@ export function ContactCard(props: ContactCardProps) {
       subtitle={props.email}
       status={props.status}
       imageUrl={props.avatarUrl}
-      className="bg-blue-50/50 border-blue-100"
+      className={cn(
+        "bg-blue-50/50 border-blue-100 dark:bg-blue-950/20 dark:border-blue-900/30",
+        props.className
+      )}
       actions={actions}
     >
       {props.phone && (
